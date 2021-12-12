@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="referrer" content="same-origin">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2&family=Baloo+Paaji+2:wght@400;600&display=swap"
+		rel="stylesheet">
+	<link rel="stylesheet" href="/css/style.css" />
+	<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+	<link rel="shortcut icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+	<link rel="shortcut icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+	<link rel="manifest" href="/images/site.webmanifest">
+	<title>ChickenTinder Ingredient Selection!</title>
+</head>
+
+<body>
+	<div class="intro">
+		<h1 class="header">ChickenTinder</h1>
+		<h2>Final Dish: FINAL_DISH</h2>
+		<h2>Date: FINAL_DATETIME</h2>
+		<img class="intro-image food-image" src="IMAGE_SOURCE">
+	</div>
+
+	<div class="side-panel ingredient-panel">
+		<div class="congrats">
+			Congratulations on finalizing a dish that your group agrees on! Assign yourself to ingredients below by adding your name next to the ingredient you want to bring to this event!
+		</div>
+		<div class="description">
+			<h2>What you'll be making</h2>
+			RECIPE_DESCRIPTION
+		</div>
+
+		<div class="ingredient-selection-wrapper">
+			<h2>Select your ingredient</h2>
+			<div>
+				Select the ingredient(s) you will bring to this food night.
+			</div>
+			<div class="ingredient-selection">
+				<!-- Filled in by JS -->
+			</div>
+		</div>
+	</div>
+
+	<script src="/js/twgl.min.js"></script>
+	<script src="/js/shaders.js"></script>
+	<script src="/js/blob.js"></script>
+	<script src="/socket.io/socket.io.js"></script>
+	<script>
+		const groupId = "GROUP_ID_REPLACED_BY_EXPRESS";
+		const name = "NAME_REPLACED_BY_EXPRESS";
+		const SOCKET_URL = `/?groupID=${groupId}&name=${encodeURIComponent(name)}`;
+		const socket = io(SOCKET_URL);
+		const initialIngredients = INGREDIENTS_JSON_REPLACED_BY_EXPRESS;
+
+		document.querySelector('.ingredient-selection').innerHTML += initialIngredients.map((ing, index) =>
+			`<input type="checkbox" id="checkbox_${index}" ${ing.bringer ? 'checked' : ''}>
+			<label for="checkbox_${index}">${ing.name}</label>
+			<span data-id="${index}">${ing.bringer || ''}</span>`
+		).join('');
+
+		const ingredientNameToCheckbox = new Map();
+
+		for (const checkbox of document.querySelectorAll('.ingredient-selection input')) {
+			const ingredient = checkbox.nextElementSibling.innerText;
+			ingredientNameToCheckbox.set(ingredient, checkbox);
+			checkbox.addEventListener('change', (e) => {
+				const id = checkbox.id;
+				const isChecked = checkbox.checked;
+				socket.emit('edit', {
+					ingredient,
+					content: isChecked ? name : '',
+				});
+			});
+		}
+
+		socket.on('edit', ({ ingredient, content }) => {
+			const checkbox = ingredientNameToCheckbox.get(ingredient);
+			checkbox.checked = content.length > 0;
+			checkbox.nextElementSibling.nextElementSibling.innerText = content || "";
+		});
+	</script>
+</body>
+
+</html>
