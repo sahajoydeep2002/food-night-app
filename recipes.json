@@ -1,0 +1,153 @@
+{"recipes": 
+  [
+    {
+      "recipe_name": "Classic Hamburger",
+      "image_url": "https://media.discordapp.net/attachments/901546117806841949/901776002181652540/unknown.png",
+      "description": "The classic homemade hamburger! Perfectly seasoned, juicy ground beef burgers",
+      "ingredients": [
+        {
+          "name": "Ground beef"
+        },
+        {
+          "name": "Slices of cheese"
+        },
+        {
+          "name": "Lettuce"
+        },
+        {
+          "name": "Tomato"
+        },
+        {
+          "name": "Onion"
+        },
+        {
+          "name": "Burger sauce: ketchup, mustard, mayonnaise"
+        },
+        {
+          "name": "Pickles"
+        },
+        {
+          "name": "Hamburger buns"
+        }
+      ]
+    },
+    {
+      "recipe_name": "Chinese Hot Pot",
+      "image_url": "https://media.discordapp.net/attachments/901546117806841949/901775478518591498/unknown.png",
+      "description": "A warm, comforting, and social meal to have with close-knit family or friends on a cold day!",
+      "ingredients": [
+        {
+          "name": "Soup base"
+        },
+        {
+          "name": "Napa cabbage"
+        },
+        {
+          "name": "Sliced beef"
+        },
+        {
+          "name": "Enoki/Shiitake mushrooms"
+        },
+        {
+          "name": "Fish balls"
+        },
+        {
+          "name": "Noodles (ramen, udon, glass)"
+        },
+        {
+          "name": "Tofu"
+        },
+        {
+          "name": "Dipping sauce"
+        }
+      ]
+    },      
+    {
+      "recipe_name": "Pasta",
+      "image_url": "https://media.discordapp.net/attachments/901546117806841949/901775368195813406/unknown.png",
+      "description": "Take a tour of Italy by making three different types of pasta: bolognese, alfredo, pesto",
+      "ingredients": [
+        {
+          "name": "Bolognese sauce"
+        },
+        {
+          "name": "Alfredo sauce"
+        },
+        {
+          "name": "Pesto sauce"
+        },
+        {
+          "name": "Spaghetti noodles"
+        },
+        {
+          "name": "Penne noodles"
+        },
+        {
+          "name": "Rotini noodes"
+        },
+        {
+          "name": "Garlic bread"
+        },
+        {
+          "name": "Grated cheese"
+        }
+      ]
+    },
+    {
+      "recipe_name": "Shrimp Tacos",
+      "image_url": "https://media.discordapp.net/attachments/901546117806841949/901775276558680064/unknown.png",
+      "description": "The best shrimp tacos with garlic cilantro lime slaw!",
+      "ingredients": [
+        {
+          "name": "Taco tortillas"
+        },
+        {
+          "name": "Shrimp"
+        },
+        {
+          "name": "Cojita cheese"
+        },
+        {
+          "name": "Cabbage"
+        },
+        {
+          "name": "Cilantro"
+        },
+        {
+          "name": "Limes"
+        },
+        {
+          "name": "Sour cream"
+        },
+        {
+          "name": "Garlic"
+        }
+      ]
+    },
+    {
+      "recipe_name": "Dumplings",
+      "image_url": "https://media.discordapp.net/attachments/901546117806841949/901776799057448981/unknown.png",
+      "description": "Dumplings! Thin dough encasing a luscious, super flavorful filling is enough to warn you up inside to out",
+      "ingredients": [
+        {
+          "name": "Dumpling wrappers"
+        },
+        {
+          "name": "Ground pork"
+        },
+        {
+          "name": "Napa cabbage"
+        },
+        {
+          "name": "Garlic"
+        },
+        {
+          "name": "Ginger"
+        },
+        {
+          "name": "Mushroom"
+        }
+      ]
+    }       
+  ]
+}
